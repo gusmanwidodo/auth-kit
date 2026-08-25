@@ -30,7 +30,7 @@ package that only depends on `auth-kit`.
 | [OTP](https://github.com/gusmanwidodo/auth-kit-otp) | `gusmanwidodo/auth-kit-otp` | `POST /auth-kit/otp/issue`, `POST /auth-kit/otp/verify` | One-time-password issue/verify with a hashed code store and expiry hook |
 | [Magic Link](https://github.com/gusmanwidodo/auth-kit-magic-link) | `gusmanwidodo/auth-kit-magic-link` | `POST /auth-kit/magic-link/request`, `GET /auth-kit/magic-link/consume` | Passwordless login via single-use, time-limited links with expiry hook |
 | [Permissions](https://github.com/gusmanwidodo/auth-kit-permissions) | `gusmanwidodo/auth-kit-permissions` | `POST /auth-kit/permissions/check` | Hybrid roles & permissions: static (zero-query) + dynamic (DB), polymorphic scoping, organization-ready. ~65× faster than spatie on the common check |
-| [Organization](https://github.com/gusmanwidodo/auth-kit-organization) | `gusmanwidodo/auth-kit-organization` | `POST /auth-kit/organization/{create,invite,accept-invitation,set-active,check}` | Multi-tenant organizations, members, invitations, active-org. owner/admin/member as organization-scoped roles via the permissions plugin |
+| [Organization](https://github.com/gusmanwidodo/auth-kit-organization) | `gusmanwidodo/auth-kit-organization` | `POST /auth-kit/organization/{create,invite,accept-invitation,set-active,check}` + `/teams/{create,add-member,check}` | Multi-tenant organizations, members, invitations, active-org, and nested teams. owner/admin/member and team lead/member as scoped roles via the permissions plugin |
 
 > Building a plugin? Add a row here in the same format so it is discoverable
 > from the core.
@@ -122,7 +122,9 @@ for the design decision behind the plugin model, and
 [`docs/adr/002-hybrid-access-control-model.md`](docs/adr/002-hybrid-access-control-model.md)
 for the access-control model used by the permissions plugin, and
 [`docs/adr/003-organization-on-scoped-permissions.md`](docs/adr/003-organization-on-scoped-permissions.md)
-for how the organization plugin builds on scoped permissions.
+for how the organization plugin builds on scoped permissions, and
+[`docs/adr/004-teams-as-nested-scope.md`](docs/adr/004-teams-as-nested-scope.md)
+for teams as a nested authorization scope.
 
 ## Testing
 
