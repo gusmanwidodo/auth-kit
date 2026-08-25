@@ -20,6 +20,19 @@ Plugins are distributed as independent packages (e.g.
 [`gusmanwidodo/auth-kit-otp`](https://github.com/gusmanwidodo/auth-kit-otp)),
 so the ecosystem grows without touching the core.
 
+## Plugin registry
+
+Official plugins maintained alongside the core. Each is a standalone Composer
+package that only depends on `auth-kit`.
+
+| Plugin | Package | Endpoints | Purpose |
+|--------|---------|-----------|---------|
+| [OTP](https://github.com/gusmanwidodo/auth-kit-otp) | `gusmanwidodo/auth-kit-otp` | `POST /auth-kit/otp/issue`, `POST /auth-kit/otp/verify` | One-time-password issue/verify with a hashed code store and expiry hook |
+| [Magic Link](https://github.com/gusmanwidodo/auth-kit-magic-link) | `gusmanwidodo/auth-kit-magic-link` | `POST /auth-kit/magic-link/request`, `GET /auth-kit/magic-link/consume` | Passwordless login via single-use, time-limited links with expiry hook |
+
+> Building a plugin? Add a row here in the same format so it is discoverable
+> from the core.
+
 ## Requirements
 
 - PHP `^8.3`
