@@ -23,7 +23,7 @@ so the ecosystem grows without touching the core.
 ## Requirements
 
 - PHP `^8.3`
-- Laravel 11 or 12
+- Laravel 12
 
 ## Installation
 
