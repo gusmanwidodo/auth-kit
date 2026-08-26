@@ -27,6 +27,7 @@ package that only depends on `auth-kit`.
 
 | Plugin | Package | Endpoints | Purpose |
 |--------|---------|-----------|---------|
+| [Credentials](https://github.com/gusmanwidodo/auth-kit-credentials) | `gusmanwidodo/auth-kit-credentials` | `POST /auth-kit/credentials/{register,login,forgot-password,reset-password}` | Identifier + password auth: register, login (email/phone/username), forgot/reset password. Hashed passwords, single-use hashed reset tokens, timing-safe |
 | [OTP](https://github.com/gusmanwidodo/auth-kit-otp) | `gusmanwidodo/auth-kit-otp` | `POST /auth-kit/otp/issue`, `POST /auth-kit/otp/verify` | One-time-password issue/verify with a hashed code store and expiry hook |
 | [Magic Link](https://github.com/gusmanwidodo/auth-kit-magic-link) | `gusmanwidodo/auth-kit-magic-link` | `POST /auth-kit/magic-link/request`, `GET /auth-kit/magic-link/consume` | Passwordless login via single-use, time-limited links with expiry hook |
 | [Permissions](https://github.com/gusmanwidodo/auth-kit-permissions) | `gusmanwidodo/auth-kit-permissions` | `POST /auth-kit/permissions/check` | Hybrid roles & permissions: static (zero-query) + dynamic (DB), polymorphic scoping, organization-ready. ~65× faster than spatie on the common check |
@@ -127,7 +128,9 @@ for how the organization plugin builds on scoped permissions, and
 [`docs/adr/004-teams-as-nested-scope.md`](docs/adr/004-teams-as-nested-scope.md)
 for teams as a nested authorization scope, and
 [`docs/adr/005-social-login-socialite-wrapper.md`](docs/adr/005-social-login-socialite-wrapper.md)
-for social login as a thin wrapper over Laravel Socialite.
+for social login as a thin wrapper over Laravel Socialite, and
+[`docs/adr/006-credentials-password-login-reset.md`](docs/adr/006-credentials-password-login-reset.md)
+for identifier + password login and password reset.
 
 ## Testing
 
